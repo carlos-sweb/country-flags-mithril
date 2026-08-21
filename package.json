@@ -1,0 +1,34 @@
+{
+  "name": "country-flags-mithril",
+  "version": "1.0.0",
+  "description": "Country flag SVGs as Mithril.js components",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "bun run build/build.js",
+    "prebuild": "rm -rf flags index.js index.d.ts && mkdir -p flags"
+  },
+  "keywords": [
+    "mithril",
+    "flags",
+    "country-flags",
+    "svg",
+    "components"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/mithril": "^2.2.9",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "mithril": "^2"
+  },
+  "dependencies": {
+    "flag-icons": "^7.5.0",
+    "mithril": "^2.3.8"
+  }
+}

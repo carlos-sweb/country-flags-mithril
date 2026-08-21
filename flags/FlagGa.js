@@ -1,0 +1,17 @@
+import _attrs from '../default_attrs.js'
+import m from 'mithril'
+
+/** Mithril component for the "ga" country flag (ISO 3166-1 alpha-2). */
+const FlagGa = {
+  view: (vnode) => m(
+    'svg',
+    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}) },
+    m.trust(`<g fill-rule="evenodd">
+    <path fill="#ffe700" d="M640 480H0V0h640z"/>
+    <path fill="#36a100" d="M640 160H0V0h640z"/>
+    <path fill="#006dbc" d="M640 480H0V320h640z"/>
+  </g>`)
+  )
+}
+
+export default FlagGa
