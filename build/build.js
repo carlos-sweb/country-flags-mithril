@@ -4,9 +4,11 @@ import { existsSync, mkdirSync } from 'fs'
 
 const FLAGS_DIR = join(import.meta.dir, '../node_modules/flag-icons/flags/4x3')
 const OUT_DIR   = join(import.meta.dir, '../flags')
+const OUT_DIR_LYNX = join(import.meta.dir, '../flags-lynx')
 
-// Ensure output directory exists
+// Ensure output directories exist
 if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true })
+if (!existsSync(OUT_DIR_LYNX)) mkdirSync(OUT_DIR_LYNX, { recursive: true })
 
 /**
  * Convert an ISO 3166-1 alpha-2 code (e.g. "us", "gb-eng") to a PascalCase
@@ -68,7 +70,23 @@ const ${componentName} = {
 export default ${componentName}
 `
 
+  // mithril-lynx / Lynx: no m.trust — SVG children go in the `content` attr.
+  const componentCodeLynx = `import _attrs from '../default_attrs.js'
+import m from 'mithril-runtime'
+
+/** Mithril-lynx component for the "${code}" country flag (ISO 3166-1 alpha-2). */
+const ${componentName} = {
+  view: (vnode) => m(
+    'svg',
+    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: \`${svgSafe}\` }
+  )
+}
+
+export default ${componentName}
+`
+
   await Bun.write(join(OUT_DIR, `${componentName}.js`), componentCode)
+  await Bun.write(join(OUT_DIR_LYNX, `${componentName}.js`), componentCodeLynx)
 
   exportLines.push(`export { default as ${componentName} } from './flags/${componentName}.js'`)
   generatedNames.push({ code, componentName })
@@ -79,10 +97,6 @@ const indexContent = exportLines.join('\n') + '\n'
 await Bun.write(join(import.meta.dir, '../index.js'), indexContent)
 
 // Generate index.d.ts (TypeScript declarations)
-const dtsImports = generatedNames.map(({ componentName }) =>
-  `import type { ClassComponent, Vnode } from 'mithril'`
-).slice(0, 1).join('\n')  // single import line is enough
-
 const dtsExports = generatedNames.map(({ componentName }) =>
   `export declare const ${componentName}: { view: (vnode: Vnode<{ width?: number; height?: number; [key: string]: any }>) => any }`
 ).join('\n')
@@ -94,6 +108,7 @@ ${dtsExports}
 await Bun.write(join(import.meta.dir, '../index.d.ts'), dtsContent)
 
 console.log(`✓ Generated ${generatedNames.length} flag components in flags/`)
+console.log(`✓ Generated ${generatedNames.length} flag components in flags-lynx/`)
 console.log(`✓ Written index.js and index.d.ts`)
 console.log('\nFlags generated:')
 for (const { code, componentName } of generatedNames) {

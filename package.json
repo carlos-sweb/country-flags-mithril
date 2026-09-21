@@ -1,17 +1,44 @@
 {
   "name": "country-flags-mithril",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Country flag SVGs as Mithril.js components",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./flags/*": {
+      "import": "./flags/*.js"
+    },
+    "./flags-lynx/*": {
+      "import": "./flags-lynx/*.js"
+    },
+    "./default_attrs": {
+      "types": "./default_attrs.d.ts",
+      "import": "./default_attrs.js"
+    }
+  },
+  "files": [
+    "flags/",
+    "flags-lynx/",
+    "default_attrs.js",
+    "default_attrs.d.ts",
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
   "scripts": {
     "build": "bun run build/build.js",
-    "prebuild": "rm -rf flags index.js index.d.ts && mkdir -p flags"
+    "prebuild": "rm -rf flags flags-lynx index.js index.d.ts && mkdir -p flags flags-lynx"
   },
   "keywords": [
     "mithril",
+    "mithril-lynx",
+    "lynx",
     "flags",
     "country-flags",
     "svg",
@@ -25,7 +52,13 @@
     "typescript": "^5"
   },
   "peerDependencies": {
-    "mithril": "^2"
+    "mithril": "^2",
+    "mithril-runtime": "^1.1.0"
+  },
+  "peerDependenciesMeta": {
+    "mithril-runtime": {
+      "optional": true
+    }
   },
   "dependencies": {
     "flag-icons": "^7.5.0",

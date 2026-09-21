@@ -41,6 +41,29 @@ m(FlagGbEng, { width: 100, height: 75, class: 'my-flag' })
 
 All 271 flags from flag-icons are available.
 
+## mithril-lynx (Lynx)
+
+[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG markup is passed through the native `<svg>` `content` attribute instead.
+
+Use the parallel `flags-lynx/` components, which import `mithril-runtime` and set `content`:
+
+```javascript
+import m from 'mithril-runtime'
+import FlagUs from 'country-flags-mithril/flags-lynx/FlagUs.js'
+import FlagMx from 'country-flags-mithril/flags-lynx/FlagMx.js'
+
+const MyComponent = {
+  view: () => m('view', [
+    m(FlagUs, { width: 320, height: 240 }),
+    m(FlagMx, { width: 100, height: 75, class: 'my-flag' }),
+  ]),
+}
+```
+
+The web entry (`country-flags-mithril` / `flags/*`) is unchanged and still uses `m.trust`.
+
+`mithril-runtime` is an optional peer dependency: install it when you use `flags-lynx/*`.
+
 ## Build
 
 To regenerate the components from the latest version of flag-icons:
@@ -51,8 +74,9 @@ bun run build
 
 This will:
 1. Read all SVGs from `node_modules/flag-icons/flags/4x3/`
-2. Generate one component file per flag under `flags/`
-3. Write the `index.js` entry point and `index.d.ts` TypeScript declarations
+2. Generate one component file per flag under `flags/` (web, `m.trust`)
+3. Generate the same components under `flags-lynx/` (mithril-lynx, `content` attribute)
+4. Write the `index.js` entry point and `index.d.ts` TypeScript declarations
 
 ## Project structure
 
@@ -60,7 +84,11 @@ This will:
 country-flags-mithril/
 ├── build/
 │   └── build.js          # Build script
-├── flags/                # Generated flag components (271 files)
+├── flags/                # Generated flag components (web, m.trust)
+│   ├── FlagAd.js
+│   ├── FlagUs.js
+│   └── ...
+├── flags-lynx/           # Generated flag components (mithril-lynx, content)
 │   ├── FlagAd.js
 │   ├── FlagUs.js
 │   └── ...
