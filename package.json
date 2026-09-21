@@ -1,6 +1,6 @@
 {
   "name": "country-flags-mithril",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Country flag SVGs as Mithril.js components",
   "type": "module",
   "main": "index.js",
@@ -12,9 +12,19 @@
       "import": "./index.js"
     },
     "./flags/*": {
+      "types": "./flags/*.d.ts",
+      "import": "./flags/*.js"
+    },
+    "./flags/*.js": {
+      "types": "./flags/*.d.ts",
       "import": "./flags/*.js"
     },
     "./flags-lynx/*": {
+      "types": "./flags-lynx/*.d.ts",
+      "import": "./flags-lynx/*.js"
+    },
+    "./flags-lynx/*.js": {
+      "types": "./flags-lynx/*.d.ts",
       "import": "./flags-lynx/*.js"
     },
     "./default_attrs": {

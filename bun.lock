@@ -15,7 +15,11 @@
       },
       "peerDependencies": {
         "mithril": "^2",
+        "mithril-runtime": "^1.1.0",
       },
+      "optionalPeers": [
+        "mithril-runtime",
+      ],
     },
   },
   "packages": {

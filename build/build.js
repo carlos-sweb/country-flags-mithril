@@ -85,8 +85,16 @@ const ${componentName} = {
 export default ${componentName}
 `
 
+  const dts = `import type { Vnode } from 'mithril'
+
+declare const ${componentName}: { view: (vnode: Vnode<{ width?: number; height?: number; [key: string]: any }>) => any }
+export default ${componentName}
+`
+
   await Bun.write(join(OUT_DIR, `${componentName}.js`), componentCode)
+  await Bun.write(join(OUT_DIR, `${componentName}.d.ts`), dts)
   await Bun.write(join(OUT_DIR_LYNX, `${componentName}.js`), componentCodeLynx)
+  await Bun.write(join(OUT_DIR_LYNX, `${componentName}.d.ts`), dts)
 
   exportLines.push(`export { default as ${componentName} } from './flags/${componentName}.js'`)
   generatedNames.push({ code, componentName })
@@ -107,8 +115,8 @@ ${dtsExports}
 `
 await Bun.write(join(import.meta.dir, '../index.d.ts'), dtsContent)
 
-console.log(`✓ Generated ${generatedNames.length} flag components in flags/`)
-console.log(`✓ Generated ${generatedNames.length} flag components in flags-lynx/`)
+console.log(`✓ Generated ${generatedNames.length} flag components + .d.ts in flags/`)
+console.log(`✓ Generated ${generatedNames.length} flag components + .d.ts in flags-lynx/`)
 console.log(`✓ Written index.js and index.d.ts`)
 console.log('\nFlags generated:')
 for (const { code, componentName } of generatedNames) {
