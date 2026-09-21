@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "asean" country flag (ISO 3166-1 alpha-2). */
-const FlagAsean = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#0039a6" d="M0 0h640v480H0z"/>
+const FlagAsean = lynxIcon(`<path fill="#0039a6" d="M0 0h640v480H0z"/>
   <circle cx="320" cy="240" r="144" fill="#fff"/>
   <circle cx="320" cy="240" r="137.3" fill="#ed2939"/>
   <use xlink:href="#asean-a" transform="matrix(-1 0 0 1 640 0)"/>
@@ -15,8 +12,6 @@ const FlagAsean = {
     <path d="m341.1 240 1-1a130 130 0 0 0 20.1-69.6V168h-10.5v2c0 10-1.5 42.2-14.4 70a182 182 0 0 1 14.4 70v2h10.5v-1.4c0-9.6-1-39.9-20.1-69.6"/>
     <path d="M333.4 240a178 178 0 0 0 14.4-72h-11v3.4c0 12-1 41.2-7.2 68.6a336 336 0 0 1 7.2 68.6v3.4h10.6v-2c0-10-1-43.1-13.5-69.5"/>
     <path d="M325.8 240a331 331 0 0 0 6.7-68.6V168h-10.6v144h10.6v-3.4c0-11.5 0-41.2-6.7-68.1"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagAsean

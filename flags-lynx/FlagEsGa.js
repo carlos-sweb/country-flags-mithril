@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "es-ga" country flag (ISO 3166-1 alpha-2). */
-const FlagEsGa = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<g font-size="12">
+const FlagEsGa = lynxIcon(`<g font-size="12">
     <path fill="#fff" fill-rule="evenodd" d="M0 0h640v480H0z"/>
     <path fill="#09c" d="M640 410.1 91.7-.1H0v68.4L550.4 480H640z"/>
   </g>
@@ -189,8 +186,6 @@ const FlagEsGa = {
     <path fill="none" stroke="#000" stroke-width=".5" d="M338.4 241.1c-47.1-15-84.7-.8-84.7-.8" transform="matrix(1.06667 0 0 1.06758 0 -76)"/>
     <path fill="red" d="m315.7 177.9-4 2 3.6 2.2 4.3-2z"/>
     <path fill="none" stroke="#000" stroke-width=".5" d="m296 237.8-3.8 1.9 3.4 2.1 4-2-3.6-2" transform="matrix(1.06667 0 0 1.06758 0 -76)"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagEsGa

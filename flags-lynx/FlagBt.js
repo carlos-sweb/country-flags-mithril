@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "bt" country flag (ISO 3166-1 alpha-2). */
-const FlagBt = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#ffd520" d="M.1 0h640.1v480H.1z"/>
+const FlagBt = lynxIcon(`<path fill="#ffd520" d="M.1 0h640.1v480H.1z"/>
   <path fill="#ff4e12" d="M.1 480h640.1V0z"/>
   <g stroke="#000" stroke-width=".5">
     <g fill="#fff" stroke-width=".4">
@@ -91,8 +88,6 @@ const FlagBt = {
     <path stroke="none" d="M483.8 107.5c-2.8-3-9-.7-7.2 5.4a10 10 0 0 1 7.2-5.5zM466.3 124a21 21 0 0 1 5.7-3.2 12 12 0 0 0-3.8-5.2c-1.5-1-5.7 4.7-1.9 8.3z"/>
     <path fill="none" stroke-linecap="round" stroke-width=".4" d="M458.7 113.5c-4.6-3.1-8.9-2.8-10.3-.3-3.3 0-6.1 2.4-6.2 7.2m7.1 2.1c-5.5-3.8-13.1-2.4-12.6 6.1m-3.4 4.9c2.7-2.2 6.6-3.8 9.6 0m31.8-8.4c-1 1.4-1.8 3.6-.1 7-2-2.8-7.2-2.8-12.8 4.4m25.1-11.8c-6.7.8-6.5 5.2-1.1 7m-46.5-23.4c-5.7-1.1-9.8 2.2-2 5m12.8-8.8c-8-2-11.2.1-7.6 2m-15.5 30c-.2 2.9 1.3 6.6 6 2.4m-4.4 6.1q.1 1.3-.7 2.4m-17.9-40c-4.9-1.5-5.8-6 0-5.6m-1.6 16c-5.4-1.9-5.4-7.1-1-6.6m11 3.8c-6.3-1.5-6.5-5.9-1.8-5.2m2.6-8.2c-3.4-.2-8.5 3.5.1 5.7m9.3 1.8c-7.9-1.1-7.7 2-3.1 4.1m9-11.6c-6-1.1-8.1 2.5-4 4m-15 18.3c-1.5-1.2-2.7-7 4.3-5.3m10.3 3.5c-4.7-1.3-9.2 3.4-4.9 6m11.2-11.5c-5-1-9.2.5-6.5 2.3"/>
     <path fill="#fff" stroke-width=".4" d="M483.6 107.5a10 10 0 0 0-7 5.4"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagBt

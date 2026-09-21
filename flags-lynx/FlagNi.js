@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "ni" country flag (ISO 3166-1 alpha-2). */
-const FlagNi = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagNi = lynxIcon(`<defs>
     <linearGradient id="ni-f" x1="498.7" x2="500.6" y1="289.1" y2="283.4" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#510000"/>
       <stop offset=".3" stop-color="#8a0000"/>
@@ -131,8 +128,6 @@ const FlagNi = {
     <path fill="#97c924" d="m443.9 324.7-2.5 4.2c2.9-.5 7.1-1.7 10.7-1.7s8 .9 12.4 1c5 0 7-1.2 11-1.6s8 .5 12 .6c3.1 0 7.9-1.1 12-1.5 4-.5 7.7.3 12.5.3 4.9.1 5.7-1.2 11.6-1.3 6.4-.1 7 .9 12.6.9 4.2.2 7.9-.9 11.7-1.1s5.5 0 8.3 0l-1.9-3.2-101.3 2.3z"/>
     <path fill="#fff" d="m550 324.6 4 .3 2.9.3-.4-.5c-.6.2-4.4-.2-6.4 0z"/>
   </g>
-  <path fill="#c8a400" d="m320 179.9-25.7 44.5L268 270h104l-25.7-44.6zm0 2.4 25.2 43.7 24.7 42.8h-99.8l25.2-43.8z"/>` }
-  )
-}
+  <path fill="#c8a400" d="m320 179.9-25.7 44.5L268 270h104l-25.7-44.6zm0 2.4 25.2 43.7 24.7 42.8h-99.8l25.2-43.8z"/>`, _attrs, 640, 480)
 
 export default FlagNi

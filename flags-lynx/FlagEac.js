@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "eac" country flag (ISO 3166-1 alpha-2). */
-const FlagEac = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path id="eac-a" fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-miterlimit="4" stroke-opacity="1" stroke-width="3.1" d="M0 326.4h640V348H0z"/>
+const FlagEac = lynxIcon(`<path id="eac-a" fill="#fff" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-miterlimit="4" stroke-opacity="1" stroke-width="3.1" d="M0 326.4h640V348H0z"/>
   <use xlink:href="#eac-a" width="600" height="330" transform="translate(0 -194.4)"/>
   <path id="eac-b" fill="#0087ff" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-miterlimit="4" stroke-opacity="1" stroke-width="3.1" d="M0 348h640v132H0z"/>
   <use xlink:href="#eac-b" width="600" height="330" transform="translate(0 -348)"/>
@@ -50,8 +47,6 @@ const FlagEac = {
     </g>
     <path fill="#fff" fill-rule="evenodd" stroke="#000" stroke-width=".5" d="M298.1-512.9c-.3-.3 1-1 .8-1.5q0-1.3 1.6-1.7l.6-.4c.3.2.3.7.6.4s1-1.3 1.5-1.1c-.3.4.3 1.2.7 1.5l.6 1.9q-.2.9-1.4.6c-.8-.3-1 .3-1.6-.2-.1.7 0 1.3-.9 1.6q-.9 0-1-.3-.7-.8-1.2 0-.2-.2-.3-.8" class="eac-landxx eac-rw"/>
     <path fill="#fff" fill-rule="evenodd" stroke="#000" stroke-width=".5" d="M298.4-512.1c.5-1.1 1.1.1 1.3.1 1.5.2 1.5-.1 1.8-1.5.8.6.5 0 2.2.4-.3 0-1 .8-.5.8-.4 1.1.5 1.1 1.1 1-.3.4.5.6-.3 1-.5.3-.5 0-.5.7l-.6.1c-.1.2.3.6.2.6q0 .2-.6.8t-1.3 1l-.7.2-1-1.8q0-.8-.3-1.6v-.9q-.5-.4-.8-1" class="eac-landxx eac-bi"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagEac

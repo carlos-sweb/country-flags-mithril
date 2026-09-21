@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "es" country flag (ISO 3166-1 alpha-2). */
-const FlagEs = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#AA151B" d="M0 0h640v480H0z"/>
+const FlagEs = lynxIcon(`<path fill="#AA151B" d="M0 0h640v480H0z"/>
   <path fill="#F1BF00" d="M0 120h640v240H0z"/>
   <path fill="#ad1519" d="m127.3 213.3-.8-.1-1-1-.7-.4-.6-.8s-.7-1.1-.4-2q.5-1.2 1.4-1.5l1.5-.5 1-.4 1.3-.3.5-.3 1-.2 1-.2 1.6.1h4.8c.4 0 1.2.3 1.4.4l2 .7c.5.1 1.6.3 2.2.6q.8.5 1.1 1l.5 1v1.1l-.5.8-.6 1-.8.6s-.5.5-1 .4-4.8-.8-7.6-.8-7.3.9-7.3.9"/>
   <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".3" d="m127.3 213.3-.8-.1-1-1-.7-.4-.6-.8s-.7-1.1-.4-2q.5-1.2 1.4-1.5l1.5-.5 1-.4 1.3-.3.5-.3 1-.2 1-.2 1.6.1h4.8c.4 0 1.2.3 1.4.4l2 .7c.5.1 1.6.3 2.2.6q.8.5 1.1 1l.5 1v1.1l-.5.8-.6 1-.8.6s-.5.5-1 .4-4.8-.8-7.6-.8-7.3.9-7.3.9z"/>
@@ -546,8 +543,6 @@ const FlagEs = {
   <path fill="none" d="M135.7 217v-1m-.5 1v-1m-.4 1.2V216m143 1.1V216m-.4 1.1V216m-.3 1.1V216m-.3 1.2V216"/>
   <path fill="none" stroke="#000" stroke-width=".1" d="M276.6 217.1V216m-.6 1v-1m.3 1v-1m-.8 1v-1m.3 1v-1m-.9 1v-1m.2 1v-1m.2 1v-1m-.6 1v-1m-.3.9v-.8m-.2.8v-.8m-.4.7v-.6m.2.6v-.6m-.5.6v-.6m-.2.5v-.4m-.3.4v-.4m-.2.3v-.2"/>
   <path fill="none" stroke="#000" stroke-width=".2" d="M272.6 216.6v-.2"/>
-  <path fill="none" d="M279.1 217v-1m-.6 1v-1m-.4 1.1V216"/>` }
-  )
-}
+  <path fill="none" d="M279.1 217v-1m-.6 1v-1m-.4 1.1V216"/>`, _attrs, 640, 480)
 
 export default FlagEs

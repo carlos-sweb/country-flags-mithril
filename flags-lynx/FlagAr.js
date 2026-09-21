@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "ar" country flag (ISO 3166-1 alpha-2). */
-const FlagAr = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#74acdf" d="M0 0h640v480H0z"/>
+const FlagAr = lynxIcon(`<path fill="#74acdf" d="M0 0h640v480H0z"/>
   <path fill="#fff" d="M0 160h640v160H0z"/>
   <g id="ar-c" transform="translate(-64)scale(.96)">
     <path id="ar-a" fill="#f6b40e" stroke="#85340a" stroke-width="1.1" d="m396.8 251.3 28.5 62s.5 1.2 1.3.9c.8-.4.3-1.6.3-1.6l-23.7-64m-.7 24.2c-.4 9.4 5.4 14.6 4.7 23s3.8 13.2 5 16.5c1 3.3-1.2 5.2-.3 5.7 1 .5 3-2.1 2.4-6.8s-4.2-6-3.4-16.3-4.2-12.7-3-22"/>
@@ -34,8 +31,6 @@ const FlagAr = {
   <path id="ar-d" fill="#85340a" stroke-width="1" d="M310.8 233c2.7 0 3.3.6 4.5 1.7 1.2 1 1.9.8 2 1 .3.2 0 .8-.3.6q-.7-.2-2.5-1.6c-1.8-1.4-2.5-1-3.7-1-3.7 0-5.7 3-6.1 2.8-.5-.2 2-3.5 6.1-3.5"/>
   <use xlink:href="#ar-h" width="100%" height="100%" transform="translate(-18.4)"/>
   <circle id="ar-f" cx="310.9" cy="236.3" r="1.8" fill="#85340a" stroke-width="1"/>
-  <path id="ar-g" fill="#85340a" stroke-width="1" d="M305.9 237.5c3.5 2.7 7 2.5 9 1.3 2-1.3 2-1.7 1.6-1.7s-.8.4-2.4 1.3c-1.7.8-4.1.8-8.2-.9"/>` }
-  )
-}
+  <path id="ar-g" fill="#85340a" stroke-width="1" d="M305.9 237.5c3.5 2.7 7 2.5 9 1.3 2-1.3 2-1.7 1.6-1.7s-.8.4-2.4 1.3c-1.7.8-4.1.8-8.2-.9"/>`, _attrs, 640, 480)
 
 export default FlagAr

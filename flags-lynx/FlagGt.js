@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "gt" country flag (ISO 3166-1 alpha-2). */
-const FlagGt = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagGt = lynxIcon(`<defs>
     <radialGradient xlink:href="#gt-a" id="gt-d" cx="447.4" cy="308.3" r="16.5" gradientUnits="userSpaceOnUse"/>
     <radialGradient id="gt-a">
       <stop offset=".2" stop-color="#f9f0aa"/>
@@ -206,8 +203,6 @@ const FlagGt = {
       <path fill="#406325" d="M445 370.3a42 42 0 0 1-20.4 4.8c10-8.2 19.7-8.4 20.4-4.8zm69.8 4.5c5.2 4.7 21 8 23.5 7.4-10.6-10.7-22.1-11.8-23.5-7.4z"/>
       <path fill="#67923d" d="M445 370.3c-.7-3.7-10.5-3.4-20.4 4.8a70 70 0 0 1 20.4-4.8zm69.9 4.4c1.4-4.4 12.8-3.3 23.4 7.5a84 84 0 0 0-23.4-7.5z"/>
     </g>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagGt

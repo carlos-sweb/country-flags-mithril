@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "sx" country flag (ISO 3166-1 alpha-2). */
-const FlagSx = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagSx = lynxIcon(`<defs>
     <clipPath id="sx-a">
       <path fill-opacity=".7" d="M0 0h682.7v512H0z"/>
     </clipPath>
@@ -58,8 +55,6 @@ const FlagSx = {
     <path fill="#ff0" d="M94.4 213c.3.8-.8 1.5.2 2l.8-.7q1.4.1 2.4 1.2c.6 1.7-1.1 1.7-2 2.2h-1c.2-.6-.5-.8-.6-1a1 1 0 0 0-1.1.3c.2 1 1.5 2 .2 2.9-1.2 0-3 .4-2.9-1.2-.4-1 1.2-2.3-.5-2.4-.6 1.3-1.2 2.4-2.7 1.3l.2-1.8c1.4 0 3.1.3 3.7-1.3.4-1.1-.7-2.2.3-3 1.5-.4 2.3.6 3 1.5"/>
     <path d="M93.4 215.6c.3.9-.6 1-1.1 1.4q-.8 0-1.4-.6c-.3-1 .5-1.2 1-1.6.7-.3 1 .5 1.5.8"/>
     <path fill="#fff" d="M92.5 216.2q-.2.2-.6.2l-.2-1q1-.1.8.8"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagSx

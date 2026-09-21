@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "sh-ac" country flag (ISO 3166-1 alpha-2). */
-const FlagShAc = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#012169" d="M0 0h640v480H0Z"/>
+const FlagShAc = lynxIcon(`<path fill="#012169" d="M0 0h640v480H0Z"/>
   <path fill="url(#sh-ac-ac-h)" d="M395.4 250.5s-18.2-20.1-32-22.9c-14-2.7-22.7-.3-26.8 3-4.2 3.5-18 14.4-19.5 22.6l18.1.9s3.8-8 15.8-7.5 13.9 4.8 13.1 5.8c-.7 1-1.1 4.3 3.7 6.6s6.9 7.4 6.9 7.4l8.5-4.4s1.8-2.8 2.6-3.3 3.5-.8 4.2-1.5c.7-.8 3.4-2.6 3.4-2.6z" transform="translate(316.5 145.5)scale(.58162)"/>
   <path fill="#d5ccc0" d="M527.1 277.7s12.3 9.4 13.2 12.7c1 3.3-6.8 8.2-6.8 8.2l.9 1.6 4.2-2c.6 0 1-.8 1.1-1 .1-.3.8-1.1 1.9-1.4s1.2-.2 1.5-.5c.2-.4 1.2-1.3 1.9-1.7q.9-.5.7-.8l1-1.4-.3-.6s-7-8-15.6-12l-3.7-1z"/>
   <path fill="#fdf2e8" d="M503 292.9s8.6-14.5 15.4-15.6c0 0-3 0-5.7 2-3 2.2-9 7.4-11.8 13.5"/>
@@ -691,8 +688,6 @@ const FlagShAc = {
   <path fill="#fff" d="m37.5 0 122 90.5L281 0h39v31l-120 89.5 120 89V240h-40l-120-89.5L40.5 240H0v-30l119.5-89L0 32V0Z"/>
   <path fill="#c8102e" d="M212 140.5 320 220v20l-135.5-99.5Zm-92 10 3 17.5-96 72H0ZM320 0v1.5l-124.5 94 1-22L295 0ZM0 0l119.5 88h-30L0 21Z"/>
   <path fill="#fff" d="M120.5 0v240h80V0ZM0 80v80h320V80Z"/>
-  <path fill="#c8102e" d="M0 96.5v48h320v-48zM136.5 0v240h48V0Z"/>` }
-  )
-}
+  <path fill="#c8102e" d="M0 96.5v48h320v-48zM136.5 0v240h48V0Z"/>`, _attrs, 640, 480)
 
 export default FlagShAc

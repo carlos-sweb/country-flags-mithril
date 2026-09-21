@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "kh" country flag (ISO 3166-1 alpha-2). */
-const FlagKh = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#032ea1" d="M0 0h640v480H0z"/>
+const FlagKh = lynxIcon(`<path fill="#032ea1" d="M0 0h640v480H0z"/>
   <path fill="#e00025" d="M0 120h640v240H0z"/>
   <g fill="#fff" stroke="#000" transform="matrix(1.2 0 0 1.2 85.6 -522)">
     <g stroke-linejoin="bevel">
@@ -63,8 +60,6 @@ const FlagKh = {
     <path d="M190.7 669.3h9v50h-9zm71.5 0h16v50h-16z"/>
     <path d="M265.7 669.3h9v50h-9z"/>
     <path fill="none" d="M99 664.2h193M115.8 713h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2m65.8 37.5h8.6m-8.6-6.3h8.6m-8.6-6.2h8.6m-8.6-6.3h8.6m-8.6-6.2h8.6m-8.6-6.3h8.6m-8.6-6.2h8.6m66.2 37.5h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2m-9.2-6.3h9.2m-9.2-6.2h9.2"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagKh

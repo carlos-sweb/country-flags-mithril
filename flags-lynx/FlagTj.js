@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "tj" country flag (ISO 3166-1 alpha-2). */
-const FlagTj = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#060" d="M0 0h640v480H0z"/>
+const FlagTj = lynxIcon(`<path fill="#060" d="M0 0h640v480H0z"/>
   <path fill="#fff" d="M0 0h640v342.9H0z"/>
   <path fill="#c00" d="M0 0h640v137.1H0z"/>
   <path fill="#f8c300" d="M300.8 233.6a8.6 8.6 0 0 1 16 4V272h6.4v-34.3a8.6 8.6 0 0 1 16-4 20.2 20.2 0 1 0-38.4 0"/>
@@ -24,8 +21,6 @@ const FlagTj = {
     <use xlink:href="#tj-c" width="100%" height="100%" transform="translate(-121.2 -70)"/>
     <use xlink:href="#tj-c" width="100%" height="100%" transform="translate(-140)"/>
   </g>
-  <use xlink:href="#tj-d" width="100%" height="100%" fill="#f8c300" transform="matrix(-1 0 0 1 640 0)"/>` }
-  )
-}
+  <use xlink:href="#tj-d" width="100%" height="100%" fill="#f8c300" transform="matrix(-1 0 0 1 640 0)"/>`, _attrs, 640, 480)
 
 export default FlagTj

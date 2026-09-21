@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "py" country flag (ISO 3166-1 alpha-2). */
-const FlagPy = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#0038a8" d="M0 319.7h640V480H0z"/>
+const FlagPy = lynxIcon(`<path fill="#0038a8" d="M0 319.7h640V480H0z"/>
   <path fill="#fff" d="M0 160h640v160H0z"/>
   <path fill="#d52b1e" d="M0 0h640v160H0z"/>
   <g fill="none" stroke="#000" transform="translate(-116.4)scale(1.45455)">
@@ -159,8 +156,6 @@ const FlagPy = {
     <path d="M306.6 256.5c3 2.4 7.6 6.2 10.7 8.2-3.2 1.1-7.8 3.5-10.6 4.9 2.2-1.7 5.3-3.7 7-5.5-1.8-2.4-5-5.3-7-7.6z"/>
     <path d="m314.8 263.4-9.3 2.6h10l1.3-1.5-2-1z"/>
   </g>
-  <path fill="#fedf00" stroke="#000" stroke-width=".4" d="m327.6 249.5-7.6-5.3-7.6 5.3 2.9-8.4-6.7-5.2h8.6l2.8-8.4 2.8 8.4h8.6l-6.7 5.2z"/>` }
-  )
-}
+  <path fill="#fedf00" stroke="#000" stroke-width=".4" d="m327.6 249.5-7.6-5.3-7.6 5.3 2.9-8.4-6.7-5.2h8.6l2.8-8.4 2.8 8.4h8.6l-6.7 5.2z"/>`, _attrs, 640, 480)
 
 export default FlagPy

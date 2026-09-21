@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "cefta" country flag (ISO 3166-1 alpha-2). */
-const FlagCefta = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<path fill="#039" d="M0 0h640v480H0z"/>
+const FlagCefta = lynxIcon(`<path fill="#039" d="M0 0h640v480H0z"/>
   <circle cx="320" cy="249.8" r="30.4" fill="none" stroke="#fc0" stroke-width="27.5"/>
   <circle cx="320" cy="249.8" r="88.3" fill="none" stroke="#fc0" stroke-width="27.5"/>
   <path fill="#039" d="m404.7 165.1 84.7 84.7-84.7 84.7-84.7-84.7z"/>
@@ -15,8 +12,6 @@ const FlagCefta = {
   <circle cx="320" cy="381.4" r="13.7" fill="#fc0"/>
   <circle cx="320" cy="425.5" r="13.7" fill="#fc0"/>
   <circle cx="408.3" cy="249.8" r="13.7" fill="#fc0"/>
-  <path fill="#fc0" d="m208.3 341.5 19.5-19.4 19.4 19.4-19.4 19.5zm204.7 21 19.5-19.5 19.5 19.5-19.5 19.4z"/>` }
-  )
-}
+  <path fill="#fc0" d="m208.3 341.5 19.5-19.4 19.4 19.4-19.4 19.5zm204.7 21 19.5-19.5 19.5 19.5-19.5 19.4z"/>`, _attrs, 640, 480)
 
 export default FlagCefta

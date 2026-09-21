@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "ke" country flag (ISO 3166-1 alpha-2). */
-const FlagKe = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagKe = lynxIcon(`<defs>
     <path id="ke-a" stroke-miterlimit="10" d="m-28.6 47.5 1.8 1 46.7-81c2.7-.6 4.2-3.2 5.7-5.8 1-1.8 5-8.7 6.7-17.7a58 58 0 0 0-11.9 14.7c-1.5 2.6-3 5.2-2.3 7.9z"/>
   </defs>
   <path fill="#fff" d="M0 0h640v480H0z"/>
@@ -25,8 +22,6 @@ const FlagKe = {
     <use xlink:href="#ke-d" width="100%" height="100%" transform="scale(-1)"/>
     <use xlink:href="#ke-d" width="100%" height="100%" transform="scale(-1 1)"/>
     <use xlink:href="#ke-d" width="100%" height="100%" transform="scale(1 -1)"/>
-  </g>` }
-  )
-}
+  </g>`, _attrs, 640, 480)
 
 export default FlagKe

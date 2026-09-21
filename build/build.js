@@ -70,17 +70,12 @@ const ${componentName} = {
 export default ${componentName}
 `
 
-  // mithril-lynx / Lynx: no m.trust — SVG children go in the `content` attr.
+  // mithril-lynx / Lynx: full <svg> in content + outer size via style object
   const componentCodeLynx = `import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "${code}" country flag (ISO 3166-1 alpha-2). */
-const ${componentName} = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: \`${svgSafe}\` }
-  )
-}
+const ${componentName} = lynxIcon(\`${svgSafe}\`, _attrs, 640, 480)
 
 export default ${componentName}
 `

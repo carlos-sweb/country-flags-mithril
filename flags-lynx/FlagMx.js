@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "mx" country flag (ISO 3166-1 alpha-2). */
-const FlagMx = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagMx = lynxIcon(`<defs>
     <radialGradient xlink:href="#mx-a" id="mx-b" cx="842.3" cy="103.7" r="25.9" gradientTransform="matrix(.14152 .03595 -.03453 .14198 213.1 162.4)" gradientUnits="userSpaceOnUse"/>
     <radialGradient xlink:href="#mx-a" id="mx-c" cx="651.5" cy="550.5" r="25.9" gradientTransform="matrix(-.13441 -.05384 .04964 -.12489 397.9 -24.3)" gradientUnits="userSpaceOnUse"/>
     <radialGradient xlink:href="#mx-a" id="mx-d" cx="380.8" cy="740.4" r="25.9" gradientTransform="matrix(.07536 .00282 -.00343 .14804 412.4 -203.6)" gradientUnits="userSpaceOnUse"/>
@@ -384,8 +381,6 @@ const FlagMx = {
   <path fill="#fff" d="m297.4 235.7.2-.4h-.2zm-14.8-52s.5-.2.1.4l.3-.5h-.5z"/>
   <path fill="#f9c83a" d="m294.6 195 .4.3h-.5z"/>
   <path fill="#8f4620" d="m295 195.3-.7.1c-.2 0 .2-.2.2-.2l.4.1z"/>
-  <path fill="#977c2e" d="M301 239.1s.3 0 .5-.3-.1.4-.1.4l-.3.1-.2-.2z"/>` }
-  )
-}
+  <path fill="#977c2e" d="M301 239.1s.3 0 .5-.3-.1.4-.1.4l-.3.1-.2-.2z"/>`, _attrs, 640, 480)
 
 export default FlagMx

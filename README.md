@@ -43,9 +43,9 @@ All 271 flags from flag-icons are available.
 
 ## mithril-lynx (Lynx)
 
-[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG markup is passed through the native `<svg>` `content` attribute instead.
+[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG must follow the [native `<svg>` contract](https://lynxjs.org/api/elements/built-in/svg): `content` is a **full** `<svg>...</svg>` document string, and display size is set on the outer element via a `style` **object** (`{ width: "Npx", height: "Npx" }`), not CSS text strings.
 
-Use the parallel `flags-lynx/` components, which import `mithril-runtime` and set `content`:
+Use the parallel `flags-lynx/` components (built with `lynxIcon` in `lynx_svg.js`):
 
 ```javascript
 import m from 'mithril-runtime'
@@ -75,7 +75,7 @@ bun run build
 This will:
 1. Read all SVGs from `node_modules/flag-icons/flags/4x3/`
 2. Generate one component file per flag under `flags/` (web, `m.trust`)
-3. Generate the same components under `flags-lynx/` (mithril-lynx, `content` attribute)
+3. Generate the same components under `flags-lynx/` (mithril-lynx, full SVG in `content` + size via `style`)
 4. Write the `index.js` entry point and `index.d.ts` TypeScript declarations
 
 ## Project structure
@@ -88,12 +88,14 @@ country-flags-mithril/
 │   ├── FlagAd.js
 │   ├── FlagUs.js
 │   └── ...
-├── flags-lynx/           # Generated flag components (mithril-lynx, content)
+├── flags-lynx/           # Generated flag components (mithril-lynx, full content + style)
 │   ├── FlagAd.js
 │   ├── FlagUs.js
 │   └── ...
 ├── default_attrs.js      # Default SVG attributes (width, height, viewBox)
 ├── default_attrs.d.ts    # TypeScript types for default_attrs
+├── lynx_svg.js           # Lynx SVG helper (full content + style size)
+├── lynx_svg.d.ts
 ├── index.js              # Generated entry point (all exports)
 └── index.d.ts            # Generated TypeScript declarations
 ```

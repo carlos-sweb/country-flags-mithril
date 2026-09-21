@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "fk" country flag (ISO 3166-1 alpha-2). */
-const FlagFk = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<defs>
+const FlagFk = lynxIcon(`<defs>
     <linearGradient xlink:href="#fk-a" id="fk-c" x1="444.4" x2="470.9" y1="592.2" y2="577.1" gradientTransform="matrix(-1.08448 0 0 1.26674 909.5 -414.7)" gradientUnits="userSpaceOnUse"/>
     <linearGradient xlink:href="#fk-a" id="fk-g" x1="851.8" x2="646.2" y1="369.9" y2="369.9" gradientTransform="matrix(.85733 0 0 .9624 -161.5 .3)" gradientUnits="userSpaceOnUse"/>
     <linearGradient xlink:href="#fk-a" id="fk-d" x1="458.2" x2="520.5" y1="562.5" y2="552.8" gradientTransform="matrix(-1.01941 0 0 1.3554 909.5 -414.7)" gradientUnits="userSpaceOnUse"/>
@@ -92,8 +89,6 @@ const FlagFk = {
   <path fill="#FFF" d="m37.5 0 122 90.5L281 0h39v31l-120 89.5 120 89V240h-40l-120-89.5L40.5 240H0v-30l119.5-89L0 32V0z"/>
   <path fill="#C8102E" d="M212 140.5 320 220v20l-135.5-99.5zm-92 10 3 17.5-96 72H0zM320 0v1.5l-124.5 94 1-22L295 0zM0 0l119.5 88h-30L0 21z"/>
   <path fill="#FFF" d="M120.5 0v240h80V0zM0 80v80h320V80z"/>
-  <path fill="#C8102E" d="M0 96.5v48h320v-48zM136.5 0v240h48V0z"/>` }
-  )
-}
+  <path fill="#C8102E" d="M0 96.5v48h320v-48zM136.5 0v240h48V0z"/>`, _attrs, 640, 480)
 
 export default FlagFk

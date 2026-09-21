@@ -1,11 +1,8 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
+import { lynxIcon } from '../lynx_svg.js'
 
 /** Mithril-lynx component for the "ao" country flag (ISO 3166-1 alpha-2). */
-const FlagAo = {
-  view: (vnode) => m(
-    'svg',
-    { ..._attrs(vnode.attrs?.width, vnode.attrs?.height), ...(vnode.attrs || {}), content: `<g fill-rule="evenodd" stroke-width="1pt">
+const FlagAo = lynxIcon(`<g fill-rule="evenodd" stroke-width="1pt">
     <path fill="red" d="M0 0h640v243.6H0z"/>
     <path fill="#000001" d="M0 236.4h640V480H0z"/>
   </g>
@@ -15,8 +12,6 @@ const FlagAo = {
   <path fill="#000001" fill-rule="evenodd" d="M365.3 372.8a4.3 4.3 0 1 1-8.7 0 4.3 4.3 0 0 1 8.6 0zm-21.4-13.6a4.3 4.3 0 1 1-8.7 0 4.3 4.3 0 0 1 8.7 0m10.9 7a4.3 4.3 0 1 1-8.7 0 4.3 4.3 0 0 1 8.7 0"/>
   <path fill="#fe0" fill-rule="evenodd" d="M324.5 363.7c-42.6-24.3-87.3-50.5-130-74.8-18.7-11.7-19.6-33.4-7-49.9 1.2-2.3 2.8-1.8 3.4-.5 1.5 8 6 16.3 11.4 21.5A5288 5288 0 0 1 334 345.6c-3.4 5.8-6 12.3-9.5 18z"/>
   <path fill="#ffec00" fill-rule="evenodd" d="m297.2 305.5 17.8 16-16 17.8-17.8-16z"/>
-  <path fill="none" stroke="#000" stroke-width="3" d="m331.5 348.8-125-75.5m109.6 58.1L274 304.1m18.2 42.7L249.3 322"/>` }
-  )
-}
+  <path fill="none" stroke="#000" stroke-width="3" d="m331.5 348.8-125-75.5m109.6 58.1L274 304.1m18.2 42.7L249.3 322"/>`, _attrs, 640, 480)
 
 export default FlagAo
